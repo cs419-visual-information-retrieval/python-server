@@ -99,7 +99,7 @@ def in_memory_request(feature_compressed):
 
 
 def es_request(feature_compressed):
-    return _corsify_actual_response(jsonify(requests.post("http://45.76.188.206:9200/visual-information-retrieval-v2/_search?pretty", json={
+    return _corsify_actual_response(jsonify(requests.post("http://es-container:9200/visual-information-retrieval-v2/_search?pretty", json={
                 "knn": {
                     "field": "image-vector",
                     "query_vector": [float(w) for w in feature_compressed],
